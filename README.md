@@ -7,7 +7,9 @@ Anggota
 2. Enrico Chandra Nugroho (1103220234).
 
 How to run:
-NOTE: codingan banyak dijalankan pada Google Collab, oleh karena itu banyak awal codingan yang diawali dengan "!gdown" yang digunakan untuk mendownload file yang dibutuhkan dari google drive. untuk menjalankan, ganti file pathnya sesuai dengan lokasi data tersebut disimpan (file - file yang dibutuhkan ada pada bagian Dataset).
+NOTE: Old data merupakan dataset lama yang tidak digunakan kembali, Raw data merupakan data mentah.
+NOTE: codingan sering dijalankan pada Google Collab, oleh karena itu banyak awal codingan yang diawali dengan "!gdown" yang digunakan untuk mendownload file yang dibutuhkan dari google drive. untuk menjalankan, ganti file pathnya sesuai dengan lokasi data tersebut disimpan (file - file yang dibutuhkan ada pada bagian Dataset).
+
 
 1. jalankan file .ipynb mulai dari app_scraper, codingan ini untuk mengambil data scrappingnya.
 
