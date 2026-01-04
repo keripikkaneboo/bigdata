@@ -1,0 +1,8 @@
+kagglehub
+pymysql
+sqlalchemy
+pandas
+numpy
+seaborn
+matplotlib
+scikit-learn
