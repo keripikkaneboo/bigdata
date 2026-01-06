@@ -18,12 +18,10 @@ FILES_MAPPING = {
 }
 
 def load_raw_data():
-    # Koneksi root untuk create DB
     engine_root = get_engine(with_db=False)
     with engine_root.connect() as conn:
         conn.execute(text(f"CREATE DATABASE IF NOT EXISTS {DB_NAME}"))
     
-    # Koneksi ke DB spesifik
     engine = get_engine(with_db=True)
     print("\n--- MULAI PROSES ELT: PHASE 1 (INGEST RAW DATA) ---")
 
@@ -31,19 +29,19 @@ def load_raw_data():
         file_path = os.path.join(DATASET_DIR, csv_file)
         
         if not os.path.exists(file_path):
-            print(f"⚠️  SKIP: File {csv_file} tidak ditemukan.")
+            print(f"SKIP: File {csv_file} tidak ditemukan.")
             continue
             
-        print(f"📂 Processing: {csv_file} -> {table_name}")
+        print(f"Processing: {csv_file} -> {table_name}")
         
         try:
             df = pd.read_csv(file_path, dtype=str)
             df.columns = [c.strip().lower() for c in df.columns]
             df.to_sql(name=table_name, con=engine, if_exists='replace', index=False, chunksize=5000)
-            print(f"   ✅ Sukses! ({len(df)} baris)")
+            print(f"Sukses! ({len(df)} baris)")
             
         except Exception as e:
-            print(f"   ❌ GAGAL: {e}")
+            print(f"GAGAL: {e}")
 
 if __name__ == "__main__":
     load_raw_data()

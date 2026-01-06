@@ -5,8 +5,9 @@ scripts = [
     "2_indexing.py",
     "3_transform_core.py",
     "4_transform_inflation.py",
-    "5_validation.py",
-    "6_export.py"
+    "5_outlier_flag.py",
+    "6_validation.py",
+    "7_elt_analytic_queries.py"
 ]
 
 print("🚀 MEMULAI ELT PIPELINE LENGKAP...\n")

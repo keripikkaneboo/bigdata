@@ -27,10 +27,11 @@ def main():
     print("STARTING ETL PIPELINE...\n")
 
     steps = [
-        "1_extract.py",               
-        "2_transform_ecommerce.py",   
-        "3_transform_inflation.py",   
-        "4_load.py"                   
+    "1_extract.py",
+    "2_transform_ecommerce.py",
+    "3_transform_inflation.py",
+    "4_load.py",
+    "5_validate_sql_queries.py"  
     ]
 
     for step in steps:
