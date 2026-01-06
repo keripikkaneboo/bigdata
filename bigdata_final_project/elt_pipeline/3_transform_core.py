@@ -54,14 +54,14 @@ def run_transformations():
     print("\n--- MULAI PROSES ELT: PHASE 2 (TRANSFORM WAREHOUSE) ---")
     with engine.connect() as conn:
         for task in TRANSFORM_QUERIES:
-            print(f"🔄 Running: {task['name']}...")
+            print(f"Running: {task['name']}...")
             try:
                 table_name = task['sql'].split("CREATE TABLE IF NOT EXISTS ")[1].split(" ")[0]
                 conn.execute(text(f"DROP TABLE IF EXISTS {table_name}"))
                 conn.execute(text(task['sql']))
-                print("   ✅ Selesai!")
+                print("Selesai!")
             except Exception as e:
-                print(f"   ❌ GAGAL: {e}")
+                print(f"GAGAL: {e}")
 
 if __name__ == "__main__":
     run_transformations()

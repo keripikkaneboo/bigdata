@@ -129,7 +129,7 @@ def run_sql_validation():
 
     with engine.connect() as conn:
         for q in VALIDATION_QUERIES:
-            print(f"\n▶ {q['name']}")
+            print(f"\n{q['name']}")
             try:
                 result = conn.execute(text(q["sql"]))
                 rows = result.fetchall()

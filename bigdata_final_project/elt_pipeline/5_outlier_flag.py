@@ -65,11 +65,11 @@ def run_outlier_flag():
             if stmt.strip():
                 conn.execute(text(stmt))
 
-        print("✅ Tabel fact_sales_outlier_flag berhasil dibuat.")
+        print("Tabel fact_sales_outlier_flag berhasil dibuat.")
 
         result = conn.execute(text(SUMMARY_SQL)).fetchone()
 
-        print("\n📊 RINGKASAN OUTLIER:")
+        print("\nRINGKASAN OUTLIER:")
         print("-" * 50)
         print(f"Total Data              : {result.total_rows}")
         print(f"Price Outlier           : {result.price_outliers} "
@@ -78,7 +78,7 @@ def run_outlier_flag():
               f"({result.freight_outlier_pct}%)")
         print("-" * 50)
 
-    print("🏁 Proses identifikasi outlier selesai.\n")
+    print("Proses identifikasi outlier selesai.\n")
 
 if __name__ == "__main__":
     run_outlier_flag()

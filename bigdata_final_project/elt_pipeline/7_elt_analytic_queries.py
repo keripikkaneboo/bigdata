@@ -118,23 +118,23 @@ def run_analytic_queries():
 
     with engine.connect() as conn:
         for q in ANALYTIC_QUERIES:
-            print(f"\n▶ {q['name']}")
+            print(f"\n{q['name']}")
             try:
                 result = conn.execute(text(q["sql"]))
                 rows = result.fetchall()
                 headers = list(result.keys())
 
                 if not rows:
-                    print("⚠️ Query berhasil dijalankan, tetapi tidak menghasilkan data.")
+                    print("Query berhasil dijalankan, tetapi tidak menghasilkan data.")
                     continue
 
                 print_table(headers, rows)
 
             except Exception as e:
-                print("❌ Gagal menjalankan query")
-                print("   Error:", e)
+                print("Gagal menjalankan query")
+                print("Error:", e)
 
-    print("\n🏁 Seluruh query analitik ELT selesai dijalankan.\n")
+    print("\nSeluruh query analitik ELT selesai dijalankan.\n")
 
 
 if __name__ == "__main__":

@@ -14,11 +14,11 @@ def add_indexes_to_raw_data():
     with engine.connect() as conn:
         for sql in indexes:
             try:
-                print(f"⚙️  Executing: {sql.split('ON')[1]}...")
+                print(f"Executing: {sql.split('ON')[1]}...")
                 conn.execute(text(sql))
             except Exception as e:
-                print(f"   ⚠️ Note: {e}")
-        print("✅ Indexing Selesai!")
+                print(f"Note: {e}")
+        print("Indexing Selesai!")
 
 if __name__ == "__main__":
     add_indexes_to_raw_data()

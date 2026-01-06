@@ -61,15 +61,15 @@ def run_inflation_analysis():
     print("\n--- MULAI PROSES ELT: PHASE 3 (INFLATION ANALYSIS) ---")
     with engine.connect() as conn:
         for task in INFLATION_QUERIES:
-            print(f"🔄 Running: {task['name']}...")
+            print(f"Running: {task['name']}...")
             start_time = time.time()
             try:
                 table_name = task['sql'].split("CREATE TABLE IF NOT EXISTS ")[1].split(" ")[0]
                 conn.execute(text(f"DROP TABLE IF EXISTS {table_name}"))
                 conn.execute(text(task['sql']))
-                print(f"   ✅ Selesai! ({time.time() - start_time:.2f} detik)")
+                print(f"Selesai! ({time.time() - start_time:.2f} detik)")
             except Exception as e:
-                print(f"   ❌ GAGAL: {e}")
+                print(f"GAGAL: {e}")
 
 if __name__ == "__main__":
     run_inflation_analysis()

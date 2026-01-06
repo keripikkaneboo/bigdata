@@ -41,16 +41,16 @@ def run_data_quality_checks():
     all_passed = True
     with engine.connect() as conn:
         for v in validations:
-            print(f"🔎 Checking: {v['rule']}")
+            print(f"Checking: {v['rule']}")
             try:
                 result = conn.execute(text(v['sql'])).fetchone()[0]
                 if result <= v['threshold']:
-                    print(f"   ✅ PASS (Result: {result})")
+                    print(f"PASS (Result: {result})")
                 else:
-                    print(f"   ❌ FAIL (Result: {result})")
+                    print(f"FAIL (Result: {result})")
                     all_passed = False
             except Exception as e:
-                print(f"   ⚠️ ERROR: {e}")
+                print(f"ERROR: {e}")
                 all_passed = False
             print("-" * 50)
 
