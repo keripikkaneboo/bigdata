@@ -8,6 +8,7 @@ Pendekatan ETL (Extract, Transform, Load) digunakan untuk membersihkan, memvalid
 
 
 Cara Menjalankan Pipeline
+
 !sebelum menjalankan pipeline, masuk ke dalam direktori pipeline tersebut disimpan .../elt_pipeline atau .../etl_pipeline!
 
 !sebelum menjalankan dashboard, masuk ke dalam direktori dashboart tersebut .../dashboard!
@@ -17,6 +18,4 @@ Cara Menjalankan Pipeline
    python main.py > ../logs/etl_pipeline.log
 3. untuk menjalankan pipeline etl, masuk ke direktori elt_pipeline dan jalankan command berikut di terminal
    python main.py > ../logs/elt_pipeline.log
-4. untuk menjalankan dashboard, pastikan dalam folder dashboard terdapat file Dashboard_ETL.pbix lalu jalankan command berikut
-
-   streamlit run Dashboard.py
+4. untuk menjalankan dashboard, pastikan dalam folder dashboard terdapat file Dashboard_ETL.pbix lalu jalankan command berikut streamlit run Dashboard.py
