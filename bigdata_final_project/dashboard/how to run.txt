@@ -1,0 +1,4 @@
+pastikan ada file Dashboard_ETL.pbix pada folder ini
+lalu jalankan:
+streamlit run Dashboard.py atau python -m streamlit run Dashboard.py
+dashboard akan segera muncul pada website
